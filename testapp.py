@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/payload', methods = ['POST', 'GET'])
 def handleWebhook():
     if request.method == 'POST':
-        result = request.get_json
+        result = request.get_json()
         print("Got a post request")
         print(result)
         return "success"
