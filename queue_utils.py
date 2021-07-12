@@ -29,9 +29,3 @@ def send_to_queue(queue, messageBody, messageKeys = None):
         raise error
     else:
         return response
-
-def test():
-    queue = get_queue('test_queue')
-    send_to_queue(queue, "Hello")
-
-test()
