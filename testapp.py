@@ -10,8 +10,12 @@ def handleWebhook():
         result = request.get_json()
         print("Got a post request")
         print(result)
-        send_to_queue(queue, result)
-
+        response = send_to_queue(queue, result)
+        print(response)
+        if 'Successful' in response:
+            print("Success")
+        for msg_meta in response['Failed']:
+            print("Failed")
         return "success"
 
 if __name__ == '__main__':
